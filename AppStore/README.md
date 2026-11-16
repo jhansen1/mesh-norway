@@ -7,7 +7,8 @@ Følg stegene under i rekkefølge. Alt som skal limes inn, står enten her eller
 |---|---|
 | `tekster-no.md` | Navn, undertittel, beskrivelse, søkeord: norsk (bokmål) |
 | `tekster-en.md` | Det samme på engelsk |
-| `screenshots/iphone-6.9/` | Seks skjermbilder, 1320 × 2868 (iPhone 6,9") |
+| `screenshots/iphone-6.3/` | Seks skjermbilder, 1206 × 2622 (iPhone 6,3", fanen «iPhone with Dynamic Island (medium display)») |
+| `screenshots/iphone-6.9/` | Seks skjermbilder, 1320 × 2868 (iPhone 6,9"), om App Store Connect tilbyr den fanen |
 | `screenshots/ipad-13/` | Seks skjermbilder, 2064 × 2752 (iPad 13") |
 | `screenshots/*-dark/` | De samme i mørk modus. Ikke nødvendige; bruk ett sett, ikke en blanding |
 | `../docs/` | Personvern- og støttesiden, klare til publisering |
@@ -93,7 +94,7 @@ Felles for begge språk:
 
 | Felt | Verdi |
 |---|---|
-| Screenshots, iPhone 6.9" | `screenshots/iphone-6.9/` i rekkefølgen 01, 03, 05, 02, 06, 04 |
+| Screenshots, iPhone (medium display) | `screenshots/iphone-6.3/` i rekkefølgen 01, 03, 05, 02, 06, 04 |
 | Screenshots, iPad 13" | `screenshots/ipad-13/` i samme rekkefølge |
 | Copyright | 2026 Jo Willie Hansen |
 | Build | 1.0 (4) |
