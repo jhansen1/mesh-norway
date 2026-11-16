@@ -19,13 +19,20 @@ struct AboutView: View {
                     VStack(alignment: .leading, spacing: 6) {
                         Text("Mesh Norway")
                             .font(.title2.bold())
-                        Text("The iOS edition of map.868.no")
+                        Text("An unofficial app for map.868.no")
                             .foregroundStyle(.secondary)
                         Text("Version \(version)")
                             .font(.footnote)
                             .foregroundStyle(.secondary)
                     }
                     .padding(.vertical, 4)
+                }
+
+                Section {
+                    Text("This app is unofficial. It is not made, run or supported by the \(AppConfig.upstreamProjectName) project, whose author has allowed it. For help with the app, turn to the app's developer, not to the map's authors.")
+                    Link("Support for this app", destination: AppConfig.appSupportURL)
+                } header: {
+                    Text("Unofficial app")
                 }
 
                 Section {
@@ -37,7 +44,7 @@ struct AboutView: View {
                 } header: {
                     Text("The map")
                 } footer: {
-                    Text("All credit for the map belongs to its authors. Questions about the data it shows go to the operator named in its privacy policy.")
+                    Text("All credit for the map belongs to its authors. Questions about the data it shows go to the operator named in its privacy policy; questions about this app do not.")
                 }
 
                 Section {
@@ -46,6 +53,14 @@ struct AboutView: View {
                     Text("Watched nodes")
                 } footer: {
                     Text("The watchlist stays on this device. Notifications are made by the app itself; no push service is involved.")
+                }
+
+                Section {
+                    Link("MeshNorway on Matrix", destination: AppConfig.communityURL)
+                } header: {
+                    Text("Community")
+                } footer: {
+                    Text("Where people who run nodes in Norway talk. The community does not make or support this app.")
                 }
 
                 Section("Map data") {
@@ -87,7 +102,7 @@ struct AboutView: View {
                 }
 
                 Section {
-                    Text("This is an independent app. It is not affiliated with or endorsed by Meshtastic LLC. Meshtastic® is a registered trademark of Meshtastic LLC.")
+                    Text("This is an unofficial, independent app. It is not affiliated with or endorsed by Meshtastic LLC. Meshtastic® is a registered trademark of Meshtastic LLC.")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }

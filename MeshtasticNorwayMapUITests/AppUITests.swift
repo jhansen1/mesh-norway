@@ -12,10 +12,10 @@ final class AppUITests: XCTestCase {
         app.launch()
 
         // Under the map, always: whose map it is, and the way to the full credits.
-        XCTAssertTrue(app.staticTexts["map.868.no by Jim C K Flaten"].waitForExistence(timeout: 20))
+        XCTAssertTrue(app.staticTexts["Unofficial app · map.868.no by Jim C K Flaten"].waitForExistence(timeout: 20))
         app.buttons["aboutButton"].tap()
         XCTAssertTrue(app.navigationBars["About"].waitForExistence(timeout: 10))
-        XCTAssertTrue(app.staticTexts["The iOS edition of map.868.no"].exists)
+        XCTAssertTrue(app.staticTexts["An unofficial app for map.868.no"].exists)
         let credit = NSPredicate(format: "label CONTAINS %@", "created by Jim C K Flaten")
         XCTAssertTrue(app.staticTexts.matching(credit).firstMatch.exists)
         app.buttons["Done"].tap() // the app's own button: its interface is English

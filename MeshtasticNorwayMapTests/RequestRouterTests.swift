@@ -16,6 +16,17 @@ final class RequestRouterTests: XCTestCase {
         }
     }
 
+    func testPageLoadsCarryTheAppsMark() {
+        func marked(_ text: String) -> String? { RequestRouter.markedPageURL(for: URL(string: text)!)?.absoluteString }
+        XCTAssertEqual(marked("meshmap://map.868.no/"), "meshmap://map.868.no/?client=ios-app")
+        XCTAssertEqual(marked("meshmap://map.868.no/?node=!997b0449"), "meshmap://map.868.no/?node=!997b0449&client=ios-app")
+        XCTAssertEqual(marked("meshmap://map.868.no/?client=other"), "meshmap://map.868.no/?client=ios-app")
+        // Marked already, not the page, or not the site: left alone.
+        XCTAssertNil(marked("meshmap://map.868.no/?client=ios-app&node=!997b0449"))
+        XCTAssertNil(marked("meshmap://map.868.no/privacy.html"))
+        XCTAssertNil(marked("https://map.868.no/"))
+    }
+
     func testUpstreamURLKeepsPathAndQuery() {
         let url = URL(string: "meshmap://map.868.no/api/v1/nodes/%21a206ab04/contact?x=1&y=a%20b#frag")!
         XCTAssertEqual(RequestRouter.upstreamURL(for: url)?.absoluteString, "https://map.868.no/api/v1/nodes/%21a206ab04/contact?x=1&y=a%20b")

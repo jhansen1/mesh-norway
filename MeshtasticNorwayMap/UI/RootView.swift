@@ -92,7 +92,7 @@ private struct OpeningView: View {
             Spacer()
             Text("Mesh Norway")
                 .font(.title2.bold())
-            Text("The iOS edition of map.868.no")
+            Text("An unofficial app for map.868.no")
                 .foregroundStyle(.secondary)
             ProgressView()
                 .padding(.top, 16)
@@ -117,7 +117,7 @@ private struct CreditLine: View {
 
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text("map.868.no by \(AppConfig.upstreamAuthor)")
+            Text("Unofficial app · map.868.no by \(AppConfig.upstreamAuthor)")
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)

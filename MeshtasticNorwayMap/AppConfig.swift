@@ -9,7 +9,7 @@ import Foundation
 enum AppConfig {
     /// The private scheme the page is served under inside the app.
     static let scheme = "meshmap"
-    /// The site this app is the iOS edition of.
+    /// The site this app shows. The app is unofficial: its author allows it, and does not make or support it.
     static let host = "map.868.no"
 
     /// The page's origin inside the app.
@@ -18,6 +18,11 @@ enum AppConfig {
     static let webOrigin = "https://\(host)"
 
     static let homeURL = URL(string: "\(appOrigin)/")!
+
+    /// Added to every load of the page, so the site can tell that it runs inside this app and adapt
+    /// to it (asked for by the map's author). The page drops it from its address once it has
+    /// started, so it never ends up in a link the viewer shares.
+    static let clientParameter = (name: "client", value: "ios-app")
 
     /// The satellite map layer. Switched off for now: the code stays, but the
     /// app shows no control for it and never adds the layer.
@@ -42,6 +47,12 @@ enum AppConfig {
     static let upstreamNoticesURL = URL(string: "https://github.com/868-no/map/blob/main/THIRD_PARTY_NOTICES.md")!
     static let upstreamPrivacyURL = URL(string: "\(webOrigin)/privacy.html")!
     static let linkSimURL = URL(string: "https://linksim.link/")!
+
+    /// The Norwegian mesh community's space on Matrix, linked at its own wish.
+    static let communityURL = URL(string: "https://matrix.to/#/#meshnorway:matrix.org")!
+
+    /// Where help with this app is given: the app's own page, never the map's project.
+    static let appSupportURL = URL(string: "https://jhansen1.github.io/mesh-norway/support")!
 }
 
 /// The imagery behind the Satellite map layer.

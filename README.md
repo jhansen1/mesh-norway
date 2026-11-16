@@ -1,11 +1,11 @@
 # Mesh Norway
 
-The iOS edition of [map.868.no](https://map.868.no), the live map of the Norwegian Meshtastic mesh.
+An unofficial iOS app for [map.868.no](https://map.868.no), the live map of the Norwegian Meshtastic mesh.
 
 ## Credit
 
 The map, the service behind it and its web app are the **868.no Map** project by **Jim C K Flaten** and contributors:
-<https://github.com/868-no/map> (GPL-3.0-only). This app is an independent iOS shell around that map. It contains none of the
+<https://github.com/868-no/map> (GPL-3.0-only). This app is an unofficial, independent iOS shell around that map. It contains none of the
 project's code: it loads the web app from map.868.no at run time, exactly as the site serves it.
 The opening screen and the About screen in the app credit the authors and link to the source, the license, the third-party notices and the
 site's privacy policy.
@@ -23,7 +23,7 @@ Meshtastic® is a registered trademark of Meshtastic LLC. This app is not affili
   received when there is no connection.
 - **No chrome of its own:** the map fills the screen; the edges around it take the page's theme colour. While the map
   loads, an opening screen names the app and credits the map's authors. The otherwise empty strip around the home
-  indicator carries one quiet line: "map.868.no by Jim C K Flaten" and an About button.
+  indicator carries one quiet line: "Unofficial app · map.868.no by Jim C K Flaten" and an About button.
 - **Satellite layer (switched off, `AppConfig.satelliteLayerAvailable`):** the code is kept for later. With it on, `StyleRewriter` adds a raster layer to the site's MapLibre styles, above the
   basemap's area fills and below its borders, roads and labels. The layer's tiles (`/__app/sat/z/x/y`) are fetched by the
   app from the provider in `AppConfig.swift` (`SatelliteProvider`). The default is Sentinel-2 cloudless 2017 by EOX
@@ -66,3 +66,11 @@ link scheme) and the entitlements are in `Config/`.
 ## Before publishing
 
 See [AppStore/README.md](AppStore/README.md): permissions to obtain, signing, and the App Store texts.
+
+## License
+
+This app's own source is released under the GNU General Public License v3.0 only (see `LICENSE`), the same license as
+the 868.no Map project. It is published with the permission of the map's author, on the conditions that it is clearly
+unofficial, free, and supported by its own developer.
+
+Support and privacy policy: <https://jhansen1.github.io/mesh-norway/>

@@ -299,6 +299,11 @@ extension MapModel: WKNavigationDelegate {
         let opensWindow = navigationAction.targetFrame == nil
         let isMainFrame = navigationAction.targetFrame?.isMainFrame ?? false
 
+        // Every load of the page says that it is this app asking, also the page's own reloads.
+        if isMainFrame, let marked = RequestRouter.markedPageURL(for: url) {
+            webView.load(URLRequest(url: marked))
+            return .cancel
+        }
         if !opensWindow, RequestRouter.isAppURL(url) { return .allow }
         if !opensWindow, !isMainFrame {
             // The site has no frames; an empty one is harmless, anything else is not its own.

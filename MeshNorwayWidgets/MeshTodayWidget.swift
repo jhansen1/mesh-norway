@@ -79,7 +79,7 @@ struct MeshTodayView: View {
             case .systemMedium:
                 VStack(alignment: .leading, spacing: 8) {
                     header
-                    HStack(alignment: .top, spacing: 0) {
+                    HStack(alignment: .top, spacing: 8) {
                         Figure(value: day.nodes, label: "nodes", before: entry.dayBefore?.nodes)
                         Figure(value: day.gateways, label: "gateways", before: entry.dayBefore?.gateways)
                         Figure(value: day.newNodes, label: "new nodes", before: entry.dayBefore?.newNodes)
@@ -137,7 +137,7 @@ private struct Figure: View {
                 .foregroundStyle(.secondary)
                 .lineLimit(1)
             if let before {
-                Text("\(before.formatted(.number.notation(.compactName))) prev. day")
+                Text("prev. \(before.formatted(.number.notation(.compactName)))")
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
                     .lineLimit(1)

@@ -5,3 +5,8 @@ xcuserdata/
 *.xcuserstate
 *.ipa
 *.dSYM.zip
+
+# Correspondence and drafts: kept locally, not published.
+AppStore/brev-til-jim.md
+AppStore/tillatelse-jim.md
+AppStore/discord/

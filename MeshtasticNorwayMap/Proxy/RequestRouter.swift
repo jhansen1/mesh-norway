@@ -64,6 +64,20 @@ enum RequestRouter {
         return parts.url
     }
 
+    /// The page's address with the app's mark on it (`AppConfig.clientParameter`), or nil when the
+    /// URL is not the page or carries the mark already.
+    static func markedPageURL(for url: URL) -> URL? {
+        guard isAppURL(url), url.path.isEmpty || url.path == "/",
+              var parts = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return nil }
+        let mark = AppConfig.clientParameter
+        var items = parts.queryItems ?? []
+        if items.contains(where: { $0.name == mark.name && $0.value == mark.value }) { return nil }
+        items.removeAll { $0.name == mark.name }
+        items.append(URLQueryItem(name: mark.name, value: mark.value))
+        parts.queryItems = items
+        return parts.url
+    }
+
     /// The public (https) form of a URL of the page's origin.
     static func publicURL(for url: URL) -> URL? {
         guard isAppURL(url), var parts = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return nil }
