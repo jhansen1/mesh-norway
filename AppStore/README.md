@@ -1,6 +1,6 @@
 # Innsending til App Store
 
-Status 16. november 2026: bygg 1.0 (3) ligger i TestFlight, tillatelsene er gitt, og tekster og skjermbilder er klare.
+Status 16. november 2026: bygg 1.0 (4) ligger i TestFlight, tillatelsene er gitt, og tekster og skjermbilder er klare.
 Følg stegene under i rekkefølge. Alt som skal limes inn, står enten her eller i filen det vises til.
 
 | Fil | Innhold |
@@ -18,18 +18,20 @@ Følg stegene under i rekkefølge. Alt som skal limes inn, står enten her eller
 
 ## Steg 0: det som må gjøres før du åpner App Store Connect
 
-1. **Velg en kontaktadresse** for appen. Den vises offentlig på støttesiden og i personvernerklæringen. Sett den inn i
-   `docs/privacy.md` og `docs/support.md` der det står `[navn og e-postadresse]` / `[name and e-mail address]` (to
-   steder i hver fil).
-2. **Publiser `docs/`** slik at de to sidene får hver sin adresse. Enklest er GitHub Pages: legg prosjektet i et
-   offentlig repo, og slå på Pages for mappen `docs` (Settings > Pages > Deploy from a branch > `main` / `docs`).
-   Adressene blir `https://<bruker>.github.io/<repo>/privacy` og `…/support`.
-3. **Sett støtteadressen i appen** (`AppConfig.appSupportURL` i `MeshtasticNorwayMap/AppConfig.swift`) og last opp et
-   nytt bygg med `TEAM_ID=2MDAAFA36Q Tools/testflight.sh`. Da viser About-siden lenken «Support for this app», som er
-   Jims vilkår om at support går via appens eget prosjekt. Bygg 3 har teksten, men ikke lenken.
-4. **Ta skjermbilder av tillatelsene:** Jims svar i Discord-tråden «Nytt Meshtastic-kart for Norge», og Heigres svar om
-   navnet. Lagre dem som én PDF eller to bilder (`tillatelse-jim.md` har ordlyden).
-5. **Test på en ekte enhet** via TestFlight: varsler i bakgrunnen, widgeter på låseskjermen, og overgangene til LinkSim
+Gjort 16. november 2026:
+
+- Kildekoden ligger åpent på <https://github.com/jhansen1/mesh-norway> (GPL-3.0).
+- Sidene er publisert med GitHub Pages fra `docs/`:
+  - Personvern: <https://jhansen1.github.io/mesh-norway/privacy>
+  - Støtte: <https://jhansen1.github.io/mesh-norway/support>
+- Bygg 1.0 (4) er lastet opp. Det har lenken «Support for this app» på About-siden, som er Jims vilkår om at support
+  går via appens eget prosjekt.
+
+Gjenstår:
+
+1. **Ta skjermbilder av tillatelsene:** Jims svar i Discord-tråden «Nytt Meshtastic-kart for Norge», og Heigres svar om
+   navnet. Lagre dem som én PDF eller to bilder (`tillatelse-jim.md` har ordlyden; filen ligger bare lokalt).
+2. **Test på en ekte enhet** via TestFlight: varsler i bakgrunnen, widgeter på låseskjermen, og overgangene til LinkSim
    og Meshtastic-appen.
 
 ## Steg 1: App Information
@@ -59,7 +61,7 @@ Er «Mesh Norway» opptatt, sier App Store Connect det når du lagrer. Prøv da 
 
 ## Steg 3: App Privacy
 
-- **Privacy Policy URL:** adressen til `privacy` fra steg 0.
+- **Privacy Policy URL:** https://jhansen1.github.io/mesh-norway/privacy
 - **Data collection:** «No, we do not collect data from this app». Appen har ingen kontoer, analyse, reklame eller
   tredjepartsbiblioteker. Serveren til map.868.no bruker IP-adresser bare i minnet til frekvensbegrensning og lagrer
   dem ikke, ifølge nettstedets egen erklæring.
@@ -84,7 +86,7 @@ App Store Connect > appen > **1.0 Prepare for Submission**. Gjør dette to gange
 | Description | `tekster-en.md` | `tekster-no.md` |
 | Keywords | `tekster-en.md` | `tekster-no.md` |
 | What's New | vises ikke for første versjon | vises ikke for første versjon |
-| Support URL | adressen til `support` | samme |
+| Support URL | https://jhansen1.github.io/mesh-norway/support | samme |
 | Marketing URL | tomt | tomt |
 
 Felles for begge språk:
@@ -94,7 +96,7 @@ Felles for begge språk:
 | Screenshots, iPhone 6.9" | `screenshots/iphone-6.9/` i rekkefølgen 01, 03, 05, 02, 06, 04 |
 | Screenshots, iPad 13" | `screenshots/ipad-13/` i samme rekkefølge |
 | Copyright | 2026 Jo Willie Hansen |
-| Build | det nyeste bygget fra TestFlight (bygget fra steg 0) |
+| Build | 1.0 (4) |
 | Version Release | «Manually release this version», så bestemmer du selv tidspunktet |
 
 Marketing URL står tomt fordi Jim ikke har svart på om https://map.868.no kan brukes der. Spør ham om du vil ha det.

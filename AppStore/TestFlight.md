@@ -1,8 +1,8 @@
 # TestFlight
 
 Status 16. november 2026: medlemskapet i Apple Developer Program er aktivt, appen er opprettet i App Store Connect, og
-versjon 1.0 er lastet opp tre ganger. Bygg 3 er det gjeldende: det har «Unofficial app»-merkingen, parameteret
-`?client=ios-app` og lenken til fellesskapet. Resten av filen er på engelsk der teksten skal limes inn hos Apple.
+versjon 1.0 er lastet opp fire ganger. Bygg 4 er det gjeldende: det har «Unofficial app»-merkingen, parameteret
+`?client=ios-app`, lenken til fellesskapet og lenken til støttesiden. Resten av filen er på engelsk der teksten skal limes inn hos Apple.
 
 ## Every build
 
